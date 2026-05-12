@@ -1,4 +1,4 @@
-# 🧠 Pepper LLM MVP: Interaction Tasks with Constrained LLMs
+# 🧠 SAR LLM MVP: Interaction Tasks with Constrained LLMs
 
 ## Overview
 
