@@ -1,0 +1,48 @@
+app_name: pepper_llm_mvp
+mode: local
+sessions_dir: data/raw/sessions
+processed_dir: data/processed/tables
+random_seed: 7
+simulation:
+  enabled: true
+  user_behavior:
+    correct_first_try: 0.45
+    incorrect_then_recover: 0.22
+    incorrect_persistent: 0.10
+    no_response_recover: 0.08
+    no_response_dropout: 0.05
+    ambiguous_then_recover: 0.10
+  user_response_latency:
+    mean_s: 7.0
+    std_s: 2.0
+  latency:
+    asr_mean_s: 1.1
+    asr_std_s: 0.35
+    llm_mean_s:
+      scripted: 0.15
+      unconstrained_llm: 2.2
+      constrained_llm: 1.5
+    llm_std_s:
+      scripted: 0.03
+      unconstrained_llm: 0.5
+      constrained_llm: 0.35
+    execution_mean_s: 0.45
+    execution_std_s: 0.12
+  failure:
+    asr_dropout_rate: 0.08
+    unconstrained_constraint_violation_rate: 0.22
+    constrained_constraint_violation_rate: 0.02
+    scripted_policy_error_rate: 0.03
+    unconstrained_policy_error_rate: 0.18
+    constrained_policy_error_rate: 0.07
+  real_world_timing:
+    prompt_speech_base_s: 3.5
+    stimulus_display_s: 2.0
+    child_response_mean_s: 7.0
+    child_response_std_s: 2.0
+    robot_response_min_s: 3.0
+    robot_response_seconds_per_word: 0.35
+    robot_response_max_s: 8.0
+    gesture_overhead_s: 1.2
+    tablet_update_s: 0.8
+    inter_turn_pause_s: 1.5

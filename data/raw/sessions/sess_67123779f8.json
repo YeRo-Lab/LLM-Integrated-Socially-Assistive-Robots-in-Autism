@@ -1,0 +1,95 @@
+{
+  "session_id": "sess_67123779f8",
+  "condition": "constrained_llm",
+  "task_name": "adaptive_storytelling",
+  "start_time": "2026-05-07T18:14:53.390137+00:00",
+  "end_time": "2026-05-07T18:15:01.091355+00:00",
+  "turns": [
+    {
+      "turn_index": 1,
+      "timestamps": {
+        "prompt_start": 467129.5629321,
+        "asr_start": 467129.5629337,
+        "asr_end": 467130.5637897,
+        "llm_start": 467130.5638287,
+        "llm_end": 467132.1899309,
+        "execution_start": 467132.1899721,
+        "execution_end": 467132.8218921
+      },
+      "prompt_text": "Our story is about a small robot named Pip at the park. What does Pip see first?",
+      "stimulus": "assets/images/story_prompts/robot_park.png",
+      "transcript_raw": "",
+      "transcript_normalized": "",
+      "response_latency_s": 8.0,
+      "attention_state": "disengaged",
+      "asr_confidence": 0.0,
+      "policy_output": {
+        "classification": "disengaged",
+        "feedback_type": "reengage",
+        "utterance": "That's okay. We can make the story together. Maybe Pip sees a friendly dog. What could happen next?",
+        "next_action": "retry",
+        "policy_decision": "fallback_policy",
+        "generation_source": "template",
+        "template_reference": "story_reengage_fallback",
+        "safety_notes": "Gentle, simple, task-focused | validation_failure=too_many_sentences",
+        "next_prompt": "What could happen next?",
+        "story_status": "in_progress"
+      },
+      "expected_feedback_type": "reengage",
+      "expected_policy_decision": "engagement_recovery",
+      "scenario_label": "story_dropout",
+      "constraint_valid": false,
+      "fallback_used": true,
+      "pipeline_success": false,
+      "breakdown": false,
+      "error_stage": "asr"
+    },
+    {
+      "turn_index": 2,
+      "timestamps": {
+        "prompt_start": 467132.8219744,
+        "asr_start": 467132.8219769,
+        "asr_end": 467133.7178227,
+        "llm_start": 467133.7178605,
+        "llm_end": 467135.5888,
+        "execution_start": 467135.5888507,
+        "execution_end": 467136.3636571
+      },
+      "prompt_text": "What could happen next?",
+      "stimulus": "assets/images/story_prompts/robot_park.png",
+      "transcript_raw": "",
+      "transcript_normalized": "",
+      "response_latency_s": 8.0,
+      "attention_state": "disengaged",
+      "asr_confidence": 0.0,
+      "policy_output": {
+        "classification": "disengaged",
+        "feedback_type": "reengage",
+        "utterance": "That's okay. We can make the story together. Maybe Pip sees a friendly dog. What could happen next?",
+        "next_action": "retry",
+        "policy_decision": "fallback_policy",
+        "generation_source": "template",
+        "template_reference": "story_reengage_fallback",
+        "safety_notes": "Gentle, task-focused, no judgment | validation_failure=too_many_sentences",
+        "next_prompt": "What could happen next?",
+        "story_status": "in_progress"
+      },
+      "expected_feedback_type": "reengage",
+      "expected_policy_decision": "engagement_recovery",
+      "scenario_label": "story_dropout",
+      "constraint_valid": false,
+      "fallback_used": true,
+      "pipeline_success": false,
+      "breakdown": false,
+      "error_stage": "asr"
+    }
+  ],
+  "session_summary": {
+    "task_completed": false,
+    "turn_count": 2,
+    "avg_latency_s": 3.400234950007871,
+    "session_duration_s": 53.40046990001574,
+    "participation_rate": 0.0,
+    "interaction_breakdown": true
+  }
+}

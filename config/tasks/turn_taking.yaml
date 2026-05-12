@@ -1,0 +1,16 @@
+task_name: turn_taking
+task_type: dialogue
+intro_text: "Let's take turns talking."
+stimulus_type: none
+stimulus_path: ""
+prompt_text: "Can you tell me your favorite animal?"
+expected_answers:
+  - dog
+  - cat
+  - elephant
+  - bird
+hint_text: "You can name any animal you like."
+reengage_text: "We can do it together. Tell me one animal."
+success_text: "Great sharing. Thank you for telling me."
+max_wait_seconds: 6
+max_retries: 2

@@ -1,0 +1,95 @@
+{
+  "session_id": "sess_d024391e51",
+  "condition": "unconstrained_llm",
+  "task_name": "adaptive_storytelling",
+  "start_time": "2026-05-07T18:00:41.473622+00:00",
+  "end_time": "2026-05-07T18:01:01.930914+00:00",
+  "turns": [
+    {
+      "turn_index": 1,
+      "timestamps": {
+        "prompt_start": 466277.0616371,
+        "asr_start": 466277.0616391,
+        "asr_end": 466278.0238192,
+        "llm_start": 466278.0238505,
+        "llm_end": 466279.5898088,
+        "execution_start": 466279.5898832,
+        "execution_end": 466280.5388011
+      },
+      "prompt_text": "Our story is about a small robot named Pip at the park. What does Pip see first?",
+      "stimulus": "assets/images/story_prompts/robot_park.png",
+      "transcript_raw": "",
+      "transcript_normalized": "",
+      "response_latency_s": 8.0,
+      "attention_state": "disengaged",
+      "asr_confidence": 0.0,
+      "policy_output": {
+        "classification": "disengaged",
+        "feedback_type": "reengage",
+        "utterance": "That's okay. We can make the story together. Maybe Pip sees a friendly dog. What does Pip see next?",
+        "next_action": "retry",
+        "policy_decision": "engagement_recovery",
+        "generation_source": "generated",
+        "template_reference": "",
+        "safety_notes": "Gentle reengagement",
+        "next_prompt": "What does Pip see next?",
+        "story_status": "in_progress"
+      },
+      "expected_feedback_type": "reengage",
+      "expected_policy_decision": "engagement_recovery",
+      "scenario_label": "story_dropout",
+      "constraint_valid": false,
+      "fallback_used": false,
+      "pipeline_success": false,
+      "breakdown": false,
+      "error_stage": "asr"
+    },
+    {
+      "turn_index": 2,
+      "timestamps": {
+        "prompt_start": 466280.5388791,
+        "asr_start": 466280.5388816,
+        "asr_end": 466281.5236252,
+        "llm_start": 466281.5236604,
+        "llm_end": 466296.5688225,
+        "execution_start": 466296.568934,
+        "execution_end": 466297.2031085
+      },
+      "prompt_text": "What does Pip see next?",
+      "stimulus": "assets/images/story_prompts/robot_park.png",
+      "transcript_raw": "",
+      "transcript_normalized": "",
+      "response_latency_s": 8.0,
+      "attention_state": "disengaged",
+      "asr_confidence": 0.0,
+      "policy_output": {
+        "classification": "disengaged",
+        "feedback_type": "reengage",
+        "utterance": "That's okay. We can make the story together. Maybe Pip sees a friendly dog. What does Pip see next?",
+        "next_action": "retry",
+        "policy_decision": "engagement_recovery",
+        "generation_source": "template",
+        "template_reference": "reengage_text",
+        "safety_notes": "Empty response, safe reengage",
+        "next_prompt": "What does Pip see next?",
+        "story_status": "in_progress"
+      },
+      "expected_feedback_type": "reengage",
+      "expected_policy_decision": "engagement_recovery",
+      "scenario_label": "story_dropout",
+      "constraint_valid": false,
+      "fallback_used": false,
+      "pipeline_success": false,
+      "breakdown": false,
+      "error_stage": "asr"
+    }
+  ],
+  "session_summary": {
+    "task_completed": false,
+    "turn_count": 2,
+    "avg_latency_s": 10.070568249968346,
+    "session_duration_s": 67.44113649993669,
+    "participation_rate": 0.0,
+    "interaction_breakdown": true
+  }
+}

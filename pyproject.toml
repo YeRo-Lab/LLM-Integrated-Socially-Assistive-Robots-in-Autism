@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pepper_llm_mvp"
+version = "0.1.0"
+description = "Local-testable MVP for constrained LLM HRI sessions"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "PyYAML>=6.0",
+  "pandas>=2.0",
+  "numpy>=1.26",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

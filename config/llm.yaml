@@ -1,0 +1,32 @@
+llm:
+  provider: openai
+  use_real_llm: true
+  model: gpt-5.4-mini
+  max_output_tokens: 200
+  timeout_s: 20
+
+  generation:
+    enable_generative_utterances: true
+    max_words: 24
+    max_sentences: 3
+    vocabulary_level: simple_child_friendly
+    require_task_relevance: true
+    allow_template_fallback: true
+
+  forbidden_terms:
+    - diagnosis
+    - diagnose
+    - autism severity
+    - clinical score
+    - disorder level
+    - wrong
+    - incorrect
+    - bad
+    - failed
+
+  allowed_feedback_types:
+    - praise
+    - hint
+    - reengage
+
+  max_sentences: 3

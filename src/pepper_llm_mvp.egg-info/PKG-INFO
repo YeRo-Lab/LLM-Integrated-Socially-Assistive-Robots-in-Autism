@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: pepper_llm_mvp
+Version: 0.1.0
+Summary: Local-testable MVP for constrained LLM HRI sessions
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: PyYAML>=6.0
+Requires-Dist: pandas>=2.0
+Requires-Dist: numpy>=1.26
+
+# pepper_llm_mvp
+
+Local-testable MVP for a Pepper + constrained-LLM interaction system.
+
+This version is designed to run **without the robot**. It includes:
+- a mock Pepper client
+- simulated ASR
+- constrained policy engine
+- JSON session logging
+- latency + interaction metrics
+- simple ablation runner
+
+## Quick start
+
+```bash
+cd pepper_llm_mvp
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
+pip install -r requirements.txt
+pip install -e .
+python scripts/run_session.py --task emotion_recognition --condition constrained_llm
+python scripts/compute_table1.py
+python scripts/compute_table2.py
+python scripts/run_ablation.py --task emotion_recognition --n_sessions 5
+```
+
+## Notes
+
+- The robot layer is mocked by default.
+- To integrate Pepper later, replace methods in `robot/pepper_client.py` and `robot/speech.py`.
+- Session logs are written to `data/raw/sessions/`.

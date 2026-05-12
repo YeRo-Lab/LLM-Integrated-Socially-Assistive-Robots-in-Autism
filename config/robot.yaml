@@ -1,0 +1,7 @@
+robot:
+  use_mock: true
+  ip: 127.0.0.1
+  port: 9559
+  default_posture: StandInit
+  speech_rate: 90
+  volume: 0.7

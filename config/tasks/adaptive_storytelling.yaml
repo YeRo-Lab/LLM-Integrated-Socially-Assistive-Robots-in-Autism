@@ -1,0 +1,56 @@
+task_name: adaptive_storytelling
+task_type: storytelling
+
+intro_text: "Let's make a short story together."
+stimulus_type: image
+stimulus_path: assets/images/story_prompts/robot_park.png
+
+prompt_text: "Our story is about a small robot named Pip at the park. What does Pip see first?"
+
+expected_answers:
+  - dog
+  - friend
+  - ball
+  - tree
+  - child
+  - bird
+
+hint_text: "You can choose one thing Pip might see, like a dog, a ball, or a friend."
+reengage_text: "That's okay. We can make the story together. Maybe Pip sees a friendly dog."
+success_text: "Nice story idea."
+
+max_wait_seconds: 8
+max_retries: 2
+
+story:
+  protagonist: "Pip"
+  setting: "a park"
+  max_story_turns: 7
+  learning_goal: "turn taking and emotion recognition"
+  required_skill_prompts:
+    - emotion_identification
+    - next_action_choice
+
+  opening_context: "Pip is a small friendly robot visiting a park."
+  emotion_prompt: "How do you think Pip feels?"
+  action_prompt: "What should Pip do next?"
+
+  allowed_emotions:
+    - happy
+    - sad
+    - excited
+    - nervous
+    - surprised
+
+  safe_themes:
+    - friendship
+    - helping
+    - sharing
+    - play
+    - curiosity
+
+  avoid_themes:
+    - danger
+    - violence
+    - fear
+    - punishment

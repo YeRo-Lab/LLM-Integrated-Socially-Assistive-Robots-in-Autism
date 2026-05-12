@@ -1,0 +1,14 @@
+task_name: emotion_recognition
+task_type: recognition
+intro_text: "Let's look at a face together."
+stimulus_type: image
+stimulus_path: assets/images/emotions/happy_01.png
+prompt_text: "How is this person feeling?"
+expected_answers:
+  - happy
+  - joyful
+hint_text: "Look at their mouth. Are they smiling or frowning?"
+reengage_text: "That's okay, let's try this one together."
+success_text: "Nice job. They do look happy."
+max_wait_seconds: 6
+max_retries: 2
