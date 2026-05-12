@@ -1,0 +1,347 @@
+
+PEPPER LLM MVP — DEVELOPER / COLLABORATOR DOCUMENTATION
+======================================================
+
+OVERVIEW
+--------
+This project implements a simulated socially assistive robot (SAR)
+interaction framework centered around adaptive storytelling and
+constrained large language model (LLM) interaction.
+
+The system was designed as a research MVP for evaluating:
+- structured human–robot interaction,
+- constrained generative AI,
+- adaptive storytelling,
+- emotion recognition,
+- turn-taking,
+- interaction safety,
+- and comparative system configurations.
+
+The current implementation uses:
+- Python
+- OpenAI API
+- simulated ASR / perception
+- simulated robot execution
+- structured YAML task definitions
+- experimental logging + analytics
+
+Pepper integration is planned but currently mocked.
+
+
+======================================================
+HIGH LEVEL SYSTEM FLOW
+======================================================
+
+Every interaction session follows this approximate pipeline:
+
+    Task Definition
+        ↓
+    Session Manager
+        ↓
+    Scenario Generator
+        ↓
+    Perception Simulation (ASR)
+        ↓
+    Policy Engine
+        ↓
+    LLM Generation / Reasoning
+        ↓
+    Constraint Validation
+        ↓
+    Robot Output (mocked)
+        ↓
+    Session Logging
+        ↓
+    Analytics + Evaluation Tables
+
+The entire project revolves around this loop.
+
+
+======================================================
+PROJECT STRUCTURE
+======================================================
+
+pepper_llm_mvp/
+│
+├── config/
+├── scripts/
+├── src/pepper_llm_mvp/
+├── data/
+├── requirements.txt
+└── README.md
+
+
+======================================================
+CONFIG DIRECTORY
+======================================================
+
+config/app.yaml
+----------------
+Global experiment configuration.
+
+Contains:
+- random seeds
+- simulated latency parameters
+- constraint violation probabilities
+- logging behavior
+- experiment defaults
+
+config/llm.yaml
+----------------
+Controls all LLM-related behavior.
+
+Includes:
+- whether real OpenAI API calls are enabled
+- model selection
+- max token limits
+- generation constraints
+- sentence limits
+- word limits
+- vocabulary constraints
+
+config/tasks/
+--------------
+Each YAML file defines a task.
+
+Current important tasks:
+- emotion_recognition.yaml
+- adaptive_storytelling.yaml
+
+
+======================================================
+SCRIPTS DIRECTORY
+======================================================
+
+scripts/run_session.py
+-----------------------
+Main entry point for running a single session.
+
+scripts/run_ablation.py
+------------------------
+Runs the experimental comparison across conditions.
+
+scripts/compute_table1.py
+--------------------------
+Computes latency metrics.
+
+scripts/compute_table2.py
+--------------------------
+Computes interaction quality metrics.
+
+scripts/compute_table3.py
+--------------------------
+Computes architectural reliability metrics.
+
+
+======================================================
+INTERACTION LAYER
+======================================================
+
+interaction/session_manager.py
+-------------------------------
+This is the MOST IMPORTANT file in the project.
+
+Responsibilities:
+- manages turns
+- selects prompts
+- tracks storytelling state
+- calls perception system
+- calls policy engine
+- validates outputs
+- handles fallback behavior
+- logs metrics
+- determines session completion
+
+Storytelling flow:
+- generated question at end of one turn becomes
+  the prompt at the start of the next turn.
+
+
+======================================================
+REASONING LAYER
+======================================================
+
+reasoning/policy_engine.py
+---------------------------
+High-level reasoning controller.
+
+reasoning/llm_client.py
+------------------------
+Handles actual OpenAI API interaction.
+
+Contains:
+- constrained prompt
+- unconstrained prompt
+- storytelling instructions
+- output schema
+
+reasoning/constraint_validator.py
+----------------------------------
+Validates generated responses.
+
+Checks:
+- max words
+- max sentences
+- forbidden terms
+- feedback types
+
+reasoning/schemas.py
+---------------------
+Defines structured data objects.
+
+
+======================================================
+PERCEPTION LAYER
+======================================================
+
+perception/perception_engine.py
+--------------------------------
+Simulates robot perception.
+
+Includes:
+- speech-to-text delay
+- confidence
+- engagement state
+
+
+======================================================
+SIMULATION LAYER
+======================================================
+
+simulation/scenario_generator.py
+---------------------------------
+Generates simulated child responses.
+
+Generates:
+- correct responses
+- incorrect responses
+- disengagement
+- storytelling contributions
+- session variability
+
+
+======================================================
+ROBOT LAYER
+======================================================
+
+robot/robot_controller.py
+--------------------------
+Currently mocked.
+
+Planned future integration:
+- libqi
+- NAOqi
+- Pepper TTS
+- Pepper motion
+
+
+======================================================
+DATA DIRECTORY
+======================================================
+
+data/raw/sessions/
+-------------------
+Stores generated session logs.
+
+Each JSON file contains:
+- complete interaction history
+- timestamps
+- policy outputs
+- metrics
+- validation state
+
+
+======================================================
+EXPERIMENTAL CONDITIONS
+======================================================
+
+1. scripted
+-------------
+Fully rule-based.
+
+2. unconstrained_llm
+---------------------
+Uses real OpenAI generation with minimal constraints.
+
+3. constrained_llm
+-------------------
+Uses real OpenAI generation with:
+- prompt constraints
+- validator enforcement
+- fallback handling
+
+
+======================================================
+ADAPTIVE STORYTELLING
+======================================================
+
+The storytelling task is the core demonstration.
+
+Story phases:
+1. story contribution
+2. emotion identification
+3. next action choice
+4. progression
+5. conclusion
+
+Key feature:
+The next generated question becomes the next prompt,
+preserving conversational continuity.
+
+
+======================================================
+HOW THE TABLES ARE GENERATED
+======================================================
+
+Table 1:
+Latency metrics computed from timestamps.
+
+Table 2:
+Interaction metrics computed from session structure.
+
+Table 3:
+Architecture metrics computed from:
+- validation
+- fallbacks
+- policy success
+
+Table 4:
+Ablation comparison between:
+- scripted
+- unconstrained
+- constrained
+
+
+======================================================
+RECOMMENDED ENTRY POINTS FOR NEW CONTRIBUTORS
+======================================================
+
+Read in this order:
+1. README.md
+2. session_manager.py
+3. policy_engine.py
+4. llm_client.py
+5. scenario_generator.py
+6. constraint_validator.py
+7. adaptive_storytelling.yaml
+
+
+======================================================
+QUICK START
+======================================================
+
+Install:
+    pip install -r requirements.txt
+
+Set API key:
+    OPENAI_API_KEY=...
+
+Run:
+    python scripts/run_session.py --task adaptive_storytelling --condition constrained_llm
+
+Run experiment:
+    python scripts/run_ablation.py --task adaptive_storytelling --n_sessions 20
+
+======================================================
+END OF DOCUMENTATION
+======================================================
